@@ -1,7 +1,7 @@
 services:
   catalogue: 
     build: 
-    dockerfile: catalogue.Dockerfile
+      dockerfile: catalogue.Dockerfile
     imagee: joindevops/catalogue:1.0.0
     container_name: catalogue
     depends_on:
