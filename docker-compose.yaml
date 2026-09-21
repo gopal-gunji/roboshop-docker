@@ -7,11 +7,30 @@ services:
     depends_on:
       - mongodb
 
+  user:
+    build: ./user
+    image: joindevops/user:1.0.0
+    container_name: user
+    depends_on:
+      - redis
+  
+  frontend:
+    build: ./frontend
+    image: joindevops/frontend:1.0.0
+    container_name: frontend
+    depends_on:
+      - catalogue
+      - user
+      
+  
   mongodb:
     build: ./mongodb
     image: joindevops/mongodb:1.0.0
     container_name: mongodb
 
+  redis:
+    image: redis:7.0
+    container_name: redis
 networks:
   default:
     driver: bridge
