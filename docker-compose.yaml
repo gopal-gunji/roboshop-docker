@@ -73,7 +73,8 @@ services:
     build: ./mysql
     image: joindevops/mysql:1.0.0
     container_name: mysql
-  rabbirmq:
+  
+  rabbitmq:
     image: rabbitmq:3
     environment:
       RABBITMAQ_DEFAULT_USER: roboshop
