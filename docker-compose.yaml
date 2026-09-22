@@ -30,7 +30,7 @@ services:
       - cart
     
   payment:
-    build: ./  payment
+    build: ./payment
     image: joindevops/payment:1.0.0
     container_name: payment
     environment:
