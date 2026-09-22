@@ -53,8 +53,8 @@ services:
   rabbirmq:
     image: rabbitmq:3
     environment:
-      - RABBITMAQ_DEFAULT_USER: roboshop
-      - RABBITMQ_DEFAULT_PASS: roboshop123
+      RABBITMAQ_DEFAULT_USER: roboshop
+      RABBITMQ_DEFAULT_PASS: roboshop123
     container_name: rabbitmq
 
 networks:
