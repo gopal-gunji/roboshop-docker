@@ -41,9 +41,9 @@ services:
     container_name: redis
 
   mysql:
-  build: ./mysql
-  image: joindevops/mysql:1.0.0
-  container_name: mysql
+    build: ./mysql
+    image: joindevops/mysql:1.0.0
+    container_name: mysql
 
 networks:
   default:
