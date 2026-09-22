@@ -1,8 +1,8 @@
-FROM python:3.9
+
+FROM python:3.9 
 EXPOSE 8080
 WORKDIR /app
 COPY payment.ini .
-COPY *.py .
 COPY *.py .
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
