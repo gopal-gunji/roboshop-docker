@@ -50,6 +50,12 @@ services:
     build: ./mysql
     image: joindevops/mysql:1.0.0
     container_name: mysql
+  rabbirmq:
+    image: rabbitmq:3
+    environment:
+      - RABBITMAQ_DEFAULT_USER: roboshop
+      - RABBITMQ_DEFAULT_PASS: roboshop123
+    container_name: rabbitmq
 
 networks:
   default:
