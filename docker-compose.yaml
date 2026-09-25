@@ -64,15 +64,21 @@ services:
     build: ./mongodb
     image: gopalk1/mongodb:1.0.0
     container_name: mongodb
+    volumes:
+      - mongodb:/data/db
 
   redis:
     image: redis:7.0
     container_name: redis
+    volumes:
+      - redis:/data
 
   mysql:
     build: ./mysql
     image: gopalk1/mysql:1.0.0
     container_name: mysql
+    volumes:
+      - mysql:/var/lib/mysql
   
   rabbitmq:
     image: rabbitmq:3
@@ -80,9 +86,17 @@ services:
       RABBITMAQ_DEFAULT_USER: roboshop
       RABBITMQ_DEFAULT_PASS: roboshop123
     container_name: rabbitmq
+    volumes:
+      - rabbitmq:/var/lib/rabbitmq
 
 networks:
   default:
     driver: bridge
     name: roboshop
     external: false
+
+volumes:
+  mongodb: # Docker volume create mongodb
+  redis:
+  mysql:
+  rabbitmq:
